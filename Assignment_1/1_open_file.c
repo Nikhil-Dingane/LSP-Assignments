@@ -1,17 +1,17 @@
-#include<stdio.h>
-#include<fcntl.h>
-#include<string.h>
-#include<errno.h>
-#include<unistd.h>
-
-/*
+/****************************************************************
 
   1) Open File
 	• Accept file name from user and open it using open().
 	• Print: success message + returned file descriptor.
 	• Handle errors using perror().
 
-*/
+****************************************************************/
+
+#include<stdio.h>
+#include<fcntl.h>
+#include<string.h>
+#include<errno.h>
+#include<unistd.h>
 
 int main(int argc, char* argv[])
 {
