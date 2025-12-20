@@ -1,3 +1,12 @@
+/********************************************************************************
+
+  2) Open File in Given Mode
+	• Accept file name and mode (R, W, RW, A) from user.
+	• Convert mode to flags (O_RDONLY, O_WRONLY, O_RDWR, O_APPEND | O_CREAT).
+	• Open file accordingly and display fd.
+
+********************************************************************************/
+
 #include<stdio.h>
 #include<errno.h>
 #include<unistd.h>
