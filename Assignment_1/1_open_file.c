@@ -4,6 +4,15 @@
 #include<errno.h>
 #include<unistd.h>
 
+/*
+
+  1) Open File
+	• Accept file name from user and open it using open().
+	• Print: success message + returned file descriptor.
+	• Handle errors using perror().
+
+*/
+
 int main(int argc, char* argv[])
 {
 	if(argc < 2)
