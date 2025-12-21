@@ -65,13 +65,10 @@ int main(int argc, char* argv[])
 
 	if(iRet == -1)
 	{
+		perror("File is not Accessible");
 		if(errno == EACCES)
 		{
-			printf("File or directory does not have %s permissions\n", argv[2]);
-		}
-		else
-		{
-			perror("");
+			printf("File does not have %s permissions\n", argv[2]);
 		}
 		return -3;
 	}
