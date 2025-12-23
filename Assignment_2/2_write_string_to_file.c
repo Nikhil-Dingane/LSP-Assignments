@@ -11,6 +11,7 @@
 #include<fcntl.h>
 #include<errno.h>
 #include<unistd.h>
+#include<string.h>
 
 int main(int argc, char* argv[])
 {
@@ -29,7 +30,7 @@ int main(int argc, char* argv[])
 		return -2;
 	}
 
-	int iRet = write(fd, argv[2], sizeof(argv[2]));
+	int iRet = write(fd, argv[2], strlen(argv[2]));
 
 	if(iRet == -1)
 	{
