@@ -78,7 +78,7 @@ BOOL enableFileWritePermissions(char* dstFileName)
 
 BOOL openDestinationFileToWrite(int* dstFileFd, char* dstFileName)
 {
-	*dstFileFd = open(dstFileName, O_WRONLY);
+	*dstFileFd = open(dstFileName, O_WRONLY | O_TRUNC);
 	if(*dstFileFd == -1)
 	{
 		if((errno == ENOENT) )
