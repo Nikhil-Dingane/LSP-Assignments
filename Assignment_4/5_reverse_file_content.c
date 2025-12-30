@@ -87,6 +87,7 @@ BOOL printReverFileContent(char* fileName)
 	}
 
 	putchar('\n');
+	close(fd);
 	return TRUE;
 }
 

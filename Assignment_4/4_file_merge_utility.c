@@ -129,8 +129,11 @@ BOOL mergeFiles(int argc, char* argv[])
 
 		if(!copyData(srcFileFd, dstFileFd))
 			return FALSE;
+
+		close(srcFileFd);
 	}
 
+	close(dstFileFd);
 	return TRUE;
 }
 
