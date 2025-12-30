@@ -150,5 +150,8 @@ int main(int argc, char *argv[])
 
 	printf("Data from %s file and offset %d is copied to %s file successfully\n", argv[1], offset, argv[2]);
 
+	close(srcFileFd);
+	close(dstFileFd);
+
 	return 0;
 }
