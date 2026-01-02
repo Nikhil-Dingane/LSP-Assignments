@@ -108,7 +108,8 @@ int main(int argc, char *argv[])
 		return -1;
 	}
 
-	getReport(argv[1]);
+	if(!getReport(argv[1]))
+		return -2;
 
 	printf("Total number of regular files: %d\n", totalNumOfRegFiles);
 	printf("Total number of directories: %d\n", totalNumOfDirs);
