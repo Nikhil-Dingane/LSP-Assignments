@@ -38,6 +38,7 @@ int main()
 	}
 
 	printf("Substraction: %d\n", fp(10,15));
+	dlclose(handle);
 
 	return 0;
 }
