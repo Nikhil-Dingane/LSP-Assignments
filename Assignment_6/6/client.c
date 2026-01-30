@@ -10,8 +10,8 @@ int main()
 	void *handle = NULL;
 
 	printf("Loading shared library...\n");
-	handle = dlopen("libserver.so", RTLD_NOW);
 	dlerror();
+	handle = dlopen("libserver.so", RTLD_NOW);
 	if(handle == NULL)
 	{
 		printf("dlopen() failed: %s\n", dlerror());
