@@ -5,7 +5,7 @@ mklib:
 	gcc -fPIC -shared -o libserver.so server.o
 
 client:
-	gcc -o client client.c -Llibserver.so
+	gcc -o client client.c 
 
 clean:
 	rm -f *.o client *.so
