@@ -3,20 +3,37 @@
 #include <dlfcn.h>
 #include <errno.h>
 
-#include "perfect.h"
-
 int main()
 {
+	void *handle = NULL;
+	int (*fp)(int) = NULL;
+	int n = 0;
 
-    int n;
+	printf("Enter number: ");
+	scanf("%d", &n);
 
-    printf("Enter number: ");
-    scanf("%d", &n);
+	dlerror();
+	handle = dlopen("./libperfect.so", RTLD_LAZY);
 
-    if (IsPerfect(n))
-        printf("%d is a PERFECT number\n", n);
-    else
-        printf("%d is NOT a perfect number\n", n);
+	if(handle == NULL)
+	{
+		printf("dlopen() failed: %s\n", dlerror());
+		return -1;
+	}
 
-    return 0;
+	dlerror();
+	fp = dlsym(handle, "IsPerfect");
+
+	if(fp == NULL)
+	{
+		printf("dlsym() failed: %s\n", dlerror());
+		return -2;
+	}
+
+	if (fp(n))
+		printf("%d is a PERFECT number\n", n);
+	else
+		printf("%d is NOT a perfect number\n", n);
+
+	return 0;
 }
