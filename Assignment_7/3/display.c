@@ -2,6 +2,8 @@
 
 void display(char *str)
 {
+	if(str == NULL)
+		return;
 	int cnt = 0;
 	while(*(str + cnt) != '\0')
 		cnt++;
